@@ -10,14 +10,36 @@
 
 <body>
     <div class="cursor-glow"></div>
+    <audio id="bg-music" src="assets/903efba0-f496-4e59-9532-8236be4bcba6.mp3" preload="auto" loop></audio>
+    <button class="music-toggle" type="button">
+        <svg class="music-toggle-icon music-toggle-icon--volume-2 lucide lucide-volume-2" data-icon="lucide:volume-2"
+            viewBox="0 0 24 24">
+            <path d="M11 5 6 9H2v6h4l5 4V5Z"></path>
+            <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+            <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
+        </svg>
+        <svg class="music-toggle-icon music-toggle-icon--volume-x lucide lucide-volume-x" data-icon="lucide:volume-x"
+            viewBox="0 0 24 24">
+            <path d="M11 5 6 9H2v6h4l5 4V5Z"></path>
+            <path d="m22 9-6 6"></path>
+            <path d="m16 9 6 6"></path>
+        </svg>
+    </button>
 
     <nav class="nav">
         <div class="logo flicker-text">Dark <b>Romantics</b></div>
+        <div class="site-search" role="search">
+            <input class="site-search-input" type="search" autocomplete="off" spellcheck="false"
+                aria-label="Search Dark Romantics" placeholder="Search the archive">
+            <button class="site-search-clear" type="button" aria-label="Clear search">&times;</button>
+            <div class="site-search-results" role="listbox" aria-label="Search results"></div>
+        </div>
         <div class="nav-links">
             <div id="n0" class="nl active" data-page="home" data-index="0">Home</div>
             <div id="n1" class="nl" data-page="artists" data-index="1">The Artists</div>
             <div id="n2" class="nl" data-page="gallery" data-index="2">Gallery</div>
             <div id="n3" class="nl" data-page="phil" data-index="3">The Philosophy</div>
+        </div>
     </nav>
 
     <div class="pg on" id="pg-home">
@@ -118,9 +140,7 @@
                 the canon. These atmospheric masterpieces now pull directly from the public domain archives.</p>
         </div>
         <div class="gal-grid slide-up delay-2">
-            <a class="gi"
-                href="https://en.wikipedia.org/wiki/Wanderer_above_the_Sea_of_Fog"
-                target="_blank">
+            <a class="gi" href="https://en.wikipedia.org/wiki/Wanderer_above_the_Sea_of_Fog" target="_blank">
                 <img src="img/Caspar_David_Friedrich_-_Wanderer_above_the_sea_of_fog.jpg" class="gi-img"
                     alt="Wanderer Above the Sea of Fog">
                 <div class="gi-overlay">
@@ -129,9 +149,7 @@
                     <div class="gi-year">1818</div>
                 </div>
             </a>
-            <a class="gi"
-                href="https://en.wikipedia.org/wiki/The_Nightmare"
-                target="_blank">
+            <a class="gi" href="https://en.wikipedia.org/wiki/The_Nightmare" target="_blank">
                 <img src="img/John_Henry_Fuseli_-_The_Nightmare.jpg" class="gi-img" alt="The Nightmare">
                 <div class="gi-overlay">
                     <div class="gi-title">The Nightmare</div>
@@ -139,9 +157,7 @@
                     <div class="gi-year">1781</div>
                 </div>
             </a>
-            <a class="gi"
-                href="https://en.wikipedia.org/wiki/Witches%27_Flight"
-                target="_blank">
+            <a class="gi" href="https://en.wikipedia.org/wiki/Witches%27_Flight" target="_blank">
                 <img src="img/Witches_Flight_Goya.jpg" class="gi-img" alt="Witches' Flight">
                 <div class="gi-overlay">
                     <div class="gi-title">Witches' Flight</div>
@@ -149,9 +165,7 @@
                     <div class="gi-year">1798</div>
                 </div>
             </a>
-            <a class="gi"
-                href="https://en.wikipedia.org/wiki/Two_Men_Contemplating_the_Moon"
-                target="_blank">
+            <a class="gi" href="https://en.wikipedia.org/wiki/Two_Men_Contemplating_the_Moon" target="_blank">
                 <img src="img/Caspar_David_Friedrich_-_Two_Men_Contemplating_the_Moon_-_Google_Art_Project.jpg"
                     class="gi-img" alt="Two Men Contemplating the Moon">
                 <div class="gi-overlay">
@@ -160,9 +174,7 @@
                     <div class="gi-year">1825</div>
                 </div>
             </a>
-            <a class="gi"
-                href="https://en.wikipedia.org/wiki/The_Third_of_May_1808"
-                target="_blank">
+            <a class="gi" href="https://en.wikipedia.org/wiki/The_Third_of_May_1808" target="_blank">
                 <img src="img/El_tres_de_mayo_de_1808_en_Madrid.jpg" class="gi-img" alt="The Third of May 1808">
                 <div class="gi-overlay">
                     <div class="gi-title">The Third of May 1808</div>
@@ -170,9 +182,7 @@
                     <div class="gi-year">1814</div>
                 </div>
             </a>
-            <a class="gi"
-                href="https://en.wikipedia.org/wiki/The_Abbey_in_the_Oakwood"
-                target="_blank">
+            <a class="gi" href="https://en.wikipedia.org/wiki/The_Abbey_in_the_Oakwood" target="_blank">
                 <img src="img/Caspar_David_Friedrich_-_Abtei_im_Eichwald_-_Google_Art_Project.jpg" class="gi-img"
                     alt="The Abbey in the Oakwood">
                 <div class="gi-overlay">
@@ -197,32 +207,61 @@
                 <div id="pp-o" class="phil-section on">
                     <div class="ph2">Origins of the movement</div>
                     <div class="phil-body">
-                        <p>Dark Romanticism did not arise from a vacuum. It emerged in the early decades of the nineteenth century as the shadow-self of mainstream Romanticism — sharing its rejection of Enlightenment rationalism, but diverging sharply in its conclusions about human nature and the natural world.</p>
-                        <p>Where figures like Wordsworth saw nature as a source of moral instruction and spiritual renewal, the Dark Romantics — Friedrich, Goya, Fuseli, and their literary counterparts — experienced the same sublime landscapes as something altogether more terrifying: vast, indifferent, and alien to the human soul.</p>
-                        <div class="blockquote"><p>"The boundaries of my domain are the boundaries of the universe."</p><cite>— Attributed to Friedrich's artistic philosophy</cite></div>
-                        <p>The movement's origins are inseparable from the political upheavals of the era: the Napoleonic Wars, the failure of revolutionary idealism, and the dawning realisation that reason alone could not secure human dignity.</p>
+                        <p>Dark Romanticism did not arise from a vacuum. It emerged in the early decades of the
+                            nineteenth century as the shadow-self of mainstream Romanticism — sharing its rejection of
+                            Enlightenment rationalism, but diverging sharply in its conclusions about human nature and
+                            the natural world.</p>
+                        <p>Where figures like Wordsworth saw nature as a source of moral instruction and spiritual
+                            renewal, the Dark Romantics — Friedrich, Goya, Fuseli, and their literary counterparts —
+                            experienced the same sublime landscapes as something altogether more terrifying: vast,
+                            indifferent, and alien to the human soul.</p>
+                        <div class="blockquote">
+                            <p>"The boundaries of my domain are the boundaries of the universe."</p><cite>— Attributed
+                                to Friedrich's artistic philosophy</cite>
+                        </div>
+                        <p>The movement's origins are inseparable from the political upheavals of the era: the
+                            Napoleonic Wars, the failure of revolutionary idealism, and the dawning realisation that
+                            reason alone could not secure human dignity.</p>
                     </div>
                 </div>
                 <div id="pp-e" class="phil-section">
                     <div class="ph2">Against Enlightenment</div>
                     <div class="phil-body">
-                        <p>The Enlightenment project rested on confidence in reason as the engine of human progress. Dark Romanticism constitutes a sustained artistic rebuttal of this faith — turning instead toward dreams, visions, psychological obsession, and the parts of experience that reason could neither explain nor contain.</p>
-                        <div class="blockquote"><p>"The sleep of reason produces monsters."</p><cite>— Francisco Goya, Los Caprichos No. 43, 1799</cite></div>
-                        <p>Goya's meaning is characteristically ambiguous: it is unclear whether the monsters arise because reason sleeps, or whether reason itself is the monster revealed in sleep. This irresolution is the movement's truest philosophical signature.</p>
+                        <p>The Enlightenment project rested on confidence in reason as the engine of human progress.
+                            Dark Romanticism constitutes a sustained artistic rebuttal of this faith — turning instead
+                            toward dreams, visions, psychological obsession, and the parts of experience that reason
+                            could neither explain nor contain.</p>
+                        <div class="blockquote">
+                            <p>"The sleep of reason produces monsters."</p><cite>— Francisco Goya, Los Caprichos No. 43,
+                                1799</cite>
+                        </div>
+                        <p>Goya's meaning is characteristically ambiguous: it is unclear whether the monsters arise
+                            because reason sleeps, or whether reason itself is the monster revealed in sleep. This
+                            irresolution is the movement's truest philosophical signature.</p>
                     </div>
                 </div>
                 <div id="pp-s" class="phil-section">
                     <div class="ph2">The Burkean Sublime</div>
                     <div class="phil-body">
-                        <p>Edmund Burke's 1757 treatise distinguished the beautiful — harmonious, finite, reassuring — from the sublime: vast, obscure, powerful, and verging on terror. For the Dark Romantics, this terror was not merely aesthetic but existential.</p>
-                        <p>Friedrich's figures stand at cliff edges, their backs turned to the viewer, gazing into distances that dwarf and potentially annihilate the self. The sublimity is not uplifting. It is vertiginous. It is a confrontation with the possibility that the universe is not arranged for human comfort.</p>
+                        <p>Edmund Burke's 1757 treatise distinguished the beautiful — harmonious, finite, reassuring —
+                            from the sublime: vast, obscure, powerful, and verging on terror. For the Dark Romantics,
+                            this terror was not merely aesthetic but existential.</p>
+                        <p>Friedrich's figures stand at cliff edges, their backs turned to the viewer, gazing into
+                            distances that dwarf and potentially annihilate the self. The sublimity is not uplifting. It
+                            is vertiginous. It is a confrontation with the possibility that the universe is not arranged
+                            for human comfort.</p>
                     </div>
                 </div>
                 <div id="pp-l" class="phil-section">
                     <div class="ph2">Legacy & influence</div>
                     <div class="phil-body">
-                        <p>The influence of Dark Romanticism on subsequent cultural history is immense. The movement directly prefigures Symbolism and Expressionism in the visual arts; in literature, it plants the seeds of Gothic fiction, horror, and the psychological novel.</p>
-                        <p>Contemporary artists from Anselm Kiefer to Guillermo del Toro have acknowledged the movement's enduring power. In an age of accelerating technological optimism, Dark Romanticism's insistence on the irreducible darkness at the heart of human experience feels, if anything, more urgently necessary than ever.</p>
+                        <p>The influence of Dark Romanticism on subsequent cultural history is immense. The movement
+                            directly prefigures Symbolism and Expressionism in the visual arts; in literature, it plants
+                            the seeds of Gothic fiction, horror, and the psychological novel.</p>
+                        <p>Contemporary artists from Anselm Kiefer to Guillermo del Toro have acknowledged the
+                            movement's enduring power. In an age of accelerating technological optimism, Dark
+                            Romanticism's insistence on the irreducible darkness at the heart of human experience feels,
+                            if anything, more urgently necessary than ever.</p>
                     </div>
                 </div>
             </div>
